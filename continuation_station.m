@@ -156,12 +156,12 @@ sample = randi(ctr);
 
 Y = reshape(STORAGE(:,ctr),N+1,Q);
 
-[TT,YY] = ode45(@(t,x) eqhandle(t,x',PARAMS(sample))',[0 10*2*pi/PARAMS(sample)],Y(1,:));
+[TT,YY] = ode45(@(t,x) eqhandle(t,x',PARAMS(sample))',[0 40*2*pi/PARAMS(sample)],Y(1,:));
 
 figure(3)
 clf
 hold on
-plot(Y(:,1),Y(:,2),'k-',YY(:,1),YY(:,2),'r-')
+plot(Y(:,1),Y(:,2),'k-',YY(end/2:end,1),YY(end/2:end,2),'r-')
 
 
 
